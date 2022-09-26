@@ -20,8 +20,8 @@ class PostFilter
             'content',
             AllowedFilter::exact('id'),
             AllowedFilter::exact('status'),
-            AllowedFilter::exact('categories.id'),
-            AllowedFilter::exact('tags.id'),
+            AllowedFilter::exact('Categories.id'),
+            AllowedFilter::exact('Tags.id'),
             AllowedFilter::exact('author_id'),
             AllowedFilter::exact('visibility'),
             

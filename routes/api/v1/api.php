@@ -4,7 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use App\Models\AdCampaign;
+use App\Models\Post;
+use App\Http\Resources\post\PostResource;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +28,8 @@ Route::get('/perro/{id}', function (Request $request) {
 });
 
 Route::get('/gato', function (Request $request) {
-    $g = AdCampaign::findOrFail(2);
-    return $g->ads;
+    $g = Post::findOrFail(1);
+    return $g->Categories;
 });
 
 //Auth
@@ -112,11 +114,17 @@ Route::post('/live/files','api\v1\live\LiveController@files');
 //Blogs
 Route::middleware('auth:api')->group(function() {
     Route::apiResource('/blogs', 'api\v1\blog\BlogController');
+
 });
 
-//Blogs
+//News
+Route::get('/news', 'api\v1\post\PostController@index');
+Route::get('/news/categories', 'api\v1\category\CategoryController@index');
+
+//Posts
 Route::middleware('auth:api')->group(function() {
     Route::apiResource('/posts', 'api\v1\post\PostController');
+    Route::post('post/image', 'api\v1\post\PostController@image');
 });
 
 //Categories

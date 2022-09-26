@@ -30,12 +30,12 @@ class Post extends Model
         'visibility' => 'array'
     ];
 
-    public function categories()
+    public function Categories()
     {
-        return $this->belongsToJson(Category::class, 'categories->[]');
+        return $this->belongsToJson(Category::class, 'categories');
     }
 
-    public function tags()
+    public function Tags()
     {
         return $this->belongsToJson(Tag::class, 'tags->[]');
     }

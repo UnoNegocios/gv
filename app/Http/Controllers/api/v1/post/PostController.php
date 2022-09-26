@@ -41,7 +41,7 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         $validated = $request->validated();
-        $client = Client::create(
+        $client = Post::create(
             $validated
         );
         return response(null, 201);
@@ -80,7 +80,7 @@ class PostController extends Controller
     {
         $validated = $request->validated();
         
-        $client->update($validated);
+        $post->update($validated);
         return response(null, 201);
     }
 
@@ -95,4 +95,10 @@ class PostController extends Controller
         $client->delete();
         return response(null, 204);
     }
+
+    public function image(Request $request){
+        $fileName = time() . '.' . $request->image->getClientOriginalExtension();
+        $request->image->move(public_path('../public/files'), $fileName);
+        return response()->json(['file' => $fileName]);
+    }  
 }

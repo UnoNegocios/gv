@@ -4,6 +4,8 @@ namespace App\Http\Resources\post;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\user\UserResource;
+use App\Http\Resources\category\CategoryResource;
+use App\Http\Resources\tag\TagResource;
 
 class PostResource extends JsonResource
 {
@@ -21,8 +23,8 @@ class PostResource extends JsonResource
           'status' => $this->status,
           'content' => $this->content,
           'featured_media_path' => $this->featured_media_path,
-          'categories' => $this->categories,
-          'tags' => $this->tags,
+          'categories' => CategoryResource::collection($this->Categories),
+          'tags' => TagResource::collection($this->Tags),
           'author' => new UserResource($this->author),
           'visibility' => $this->visibility,
           'created_at' => $this->created_at,
