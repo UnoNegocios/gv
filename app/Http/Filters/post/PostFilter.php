@@ -23,7 +23,8 @@ class PostFilter
             AllowedFilter::exact('Categories.id'),
             AllowedFilter::exact('Tags.id'),
             AllowedFilter::exact('author_id'),
-            AllowedFilter::exact('visibility'),
+            AllowedFilter::exact('visibility->web'),
+            AllowedFilter::exact('visibility->app'),
             
             
         ])
