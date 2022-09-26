@@ -113,3 +113,13 @@ Route::post('/live/files','api\v1\live\LiveController@files');
 Route::middleware('auth:api')->group(function() {
     Route::apiResource('/blogs', 'api\v1\blog\BlogController');
 });
+
+//Blogs
+Route::middleware('auth:api')->group(function() {
+    Route::apiResource('/posts', 'api\v1\post\PostController');
+});
+
+//Categories
+Route::middleware('auth:api')->group(function() {
+    Route::apiResource('/categories', 'api\v1\category\CategoryController');
+});

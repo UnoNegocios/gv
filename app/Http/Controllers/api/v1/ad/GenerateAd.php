@@ -13,8 +13,7 @@ Class GenerateAd
 
         return array_keys($anuncios, min($anuncios));*/
 
-        $adCampagin = 
-        AdCampaign::with('ads')->get();
+        $adCampagin = AdCampaign::with('ads')->get();
 
         $keyed = $adCampagin->mapWithKeys(function ($item, $key) {
             return [$item['name'] => $item['created_at']];
