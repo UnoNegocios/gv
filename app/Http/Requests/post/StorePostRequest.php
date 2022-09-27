@@ -34,6 +34,7 @@ class StorePostRequest extends FormRequest
             'categories' => '',
             'tags' => '',
             'visibility' => '',
+            'short_description' => ''
         ];
     }
 }

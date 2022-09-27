@@ -21,7 +21,8 @@ class Post extends Model
         'categories',
         'tags',
         'author_id',
-        'visibility'
+        'visibility',
+        'short_description'
     ];
 
     protected $casts =[

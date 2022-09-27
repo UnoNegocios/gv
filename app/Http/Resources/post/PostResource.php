@@ -23,6 +23,7 @@ class PostResource extends JsonResource
           'status' => $this->status,
           'content' => $this->content,
           'featured_media_path' => $this->featured_media_path,
+          'short_description' => $this->short_description,
           'categories' => CategoryResource::collection($this->Categories),
           'tags' => TagResource::collection($this->Tags),
           'author' => new UserResource($this->author),
