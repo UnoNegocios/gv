@@ -76,9 +76,11 @@ Route::middleware('auth:api')->group(function() {
 //Ads
 Route::middleware('auth:api')->group(function() {
     Route::apiResource('/ads', 'api\v1\ad\AdController');
-    Route::get('/display_ad','api\v1\ad\GenerateAd');
     Route::post('/ad/files','api\v1\ad\AdController@files');
 });
+   
+
+Route::get('/display_ad','api\v1\ad\GenerateAd');
 
 //Clients
 Route::middleware('auth:api')->group(function() {
