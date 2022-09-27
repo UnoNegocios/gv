@@ -25,6 +25,8 @@ class PostFilter
             AllowedFilter::exact('author_id'),
             AllowedFilter::exact('visibility->web'),
             AllowedFilter::exact('visibility->app'),
+
+            AllowedFilter::custom('search', new FiltersTitleOrContent)
             
             
         ])
