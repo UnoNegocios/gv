@@ -41,7 +41,7 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         $validated = $request->validated();
-        $client = Post::create(
+        $post = Post::create(
             $validated
         );
         return response(null, 201);
@@ -92,7 +92,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $client->delete();
+        $post->delete();
         return response(null, 204);
     }
 
