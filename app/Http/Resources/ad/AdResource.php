@@ -28,6 +28,7 @@ class AdResource extends JsonResource
             'end_time' => $this->end_time,
             'height' => $this->height,
             'width' => $this->width,
+            'position' => $this->position
         ];
 
     }

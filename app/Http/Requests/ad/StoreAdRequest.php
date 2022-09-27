@@ -37,6 +37,7 @@ class StoreAdRequest extends FormRequest
             'end_time' => '',
             'height' => '',
             'width' => '',
+            'position' => ''
         ];
     }
 }

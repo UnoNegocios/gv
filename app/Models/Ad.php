@@ -23,7 +23,8 @@ class Ad extends Model
         'start_time',
         'end_time',
         'height',
-        'width'
+        'width',
+        'position'
     ];
 
     public function client(){
