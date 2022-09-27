@@ -45,3 +45,6 @@ class Post extends Model
         return $this->belongsTo(User::class, 'author_id');
     }
 }
+
+
+https://wa.me/5218126554700?text=Quiero%20reclamar%20mi%20promoción%20#ReConectate%20en%203x2!%20Mi%20código%20de%20promoción%20es%20RECONECT3A2
