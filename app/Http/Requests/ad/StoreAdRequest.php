@@ -38,7 +38,7 @@ class StoreAdRequest extends FormRequest
             'height' => '',
             'width' => '',
             'position' => '',
-            'ad_campaign_id' => ''
+            'ad_campaing_id' => ''
         ];
     }
 }
