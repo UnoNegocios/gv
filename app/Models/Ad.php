@@ -24,7 +24,8 @@ class Ad extends Model
         'end_time',
         'height',
         'width',
-        'position'
+        'position',
+        'ad_campaign_id'
     ];
 
     public function client(){

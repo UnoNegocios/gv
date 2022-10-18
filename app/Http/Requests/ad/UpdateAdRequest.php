@@ -37,7 +37,8 @@ class UpdateAdRequest extends FormRequest
             'end_time' => '',
             'height' => '',
             'width' => '',
-            'position' => ''
+            'position' => '',
+            'ad_campaign_id' => ''
         ];
     }
 }
