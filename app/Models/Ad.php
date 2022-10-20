@@ -22,10 +22,13 @@ class Ad extends Model
         'is_active',
         'start_time',
         'end_time',
+        'start_hour',
+        'end_hour',
         'height',
         'width',
         'position',
-        'ad_campaing_id'
+        'ad_campaing_id',
+        'client_id',
     ];
 
     public function client(){
