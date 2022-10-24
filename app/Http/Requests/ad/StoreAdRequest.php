@@ -38,7 +38,10 @@ class StoreAdRequest extends FormRequest
             'height' => '',
             'width' => '',
             'position' => '',
-            'ad_campaing_id' => ''
+            'ad_campaing_id' => '',
+            'client_id' => '',
+            'start_hour' => '',
+            'end_hour' => ''
         ];
     }
 }

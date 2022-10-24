@@ -20,7 +20,6 @@ class AdController extends Controller
     public function index()
     {
         return AdResource::collection(Ad::paginate(15));
-    ;
     }
 
     /**

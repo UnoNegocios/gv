@@ -26,9 +26,12 @@ class AdResource extends JsonResource
             'is_active' => $this->is_active,
             'start_time' => $this->start_time,
             'end_time' => $this->end_time,
+            'start_hour' => $this->start_hour,
+            'end_hour' => $this->end_hour,
             'height' => $this->height,
             'width' => $this->width,
-            'position' => $this->position
+            'position' => $this->position,
+            'client' => $this->client,
         ];
 
     }
