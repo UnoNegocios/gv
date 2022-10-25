@@ -21,6 +21,7 @@ class PostFilter
             AllowedFilter::exact('id'),
             AllowedFilter::exact('status'),
             AllowedFilter::exact('Categories.id'),
+            AllowedFilter::exact('Categories.name'),
             AllowedFilter::exact('Tags.id'),
             AllowedFilter::exact('author_id'),
             AllowedFilter::exact('visibility->web'),
