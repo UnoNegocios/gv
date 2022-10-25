@@ -101,4 +101,10 @@ class AdController extends Controller
         $request->file->move(public_path('../public/files'), $fileName);
         return response()->json(['file' => $fileName]);
     }  
+
+    public function clickAd(Ad $ad)
+    {
+        $ad->increment('clicks', 1);
+        return response(null, 201);
+    }
 }

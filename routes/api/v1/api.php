@@ -81,6 +81,7 @@ Route::middleware('auth:api')->group(function() {
    
 
 Route::get('/display_ad','api\v1\ad\GenerateAd');
+Route::get('/click_ad/{ad}','api\v1\ad\AdController@clickAd');
 
 //Clients
 Route::middleware('auth:api')->group(function() {
