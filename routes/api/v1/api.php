@@ -89,15 +89,14 @@ Route::middleware('auth:api')->group(function() {
 });
 
 //Podcast Series
-Route::middleware('auth:api')->group(function() {
     Route::apiResource('/podcast_serie', 'api\v1\podcast_serie\PodcastSerieController');
-});
+
 Route::post('podcast_serie/files','api\v1\podcast_serie\PodcastSerieController@files');
 
 //Podcasts
-Route::middleware('auth:api')->group(function() {
+
     Route::apiResource('/podcasts', 'api\v1\podcast\PodcastController');
-});
+
 
 //States
 
@@ -108,9 +107,8 @@ Route::middleware('auth:api')->group(function() {
     Route::get('city/search', 'api\v1\city\CityController@search');
 
 //Lives
-Route::middleware('auth:api')->group(function() {
     Route::apiResource('/live', 'api\v1\live\LiveController');
-});
+
 Route::post('/live/files','api\v1\live\LiveController@files');
 
 
