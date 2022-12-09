@@ -20,6 +20,7 @@ class PostFilter
             'content',
             AllowedFilter::exact('id'),
             AllowedFilter::exact('status'),
+            AllowedFilter::exact('slug'),
             AllowedFilter::exact('Categories.id'),
             AllowedFilter::exact('Categories.name'),
             AllowedFilter::exact('Tags.id'),
