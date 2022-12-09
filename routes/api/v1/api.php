@@ -32,7 +32,7 @@ Route::get('/gato', function (Request $request) {
     $companies = Post::get()->each(function ($post){
         $post->update(['slug' =>  Str::slug($post->title)]);
     });
-    return 'ok';
+    return 'okk';
 });
 
 //Auth
