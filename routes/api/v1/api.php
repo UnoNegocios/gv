@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Http\Resources\post\PostResource;
-
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +28,11 @@ Route::get('/perro/{id}', function (Request $request) {
 });
 
 Route::get('/gato', function (Request $request) {
-    $g = Post::findOrFail(1);
-    return $g->Categories;
+
+    $companies = Post::get()->each(function ($post){
+        $post->update(['slug' =>  Str::slug($post->title)]);
+    });
+    return 'ok';
 });
 
 //Auth
