@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Http\Resources\post\PostResource;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/perro/{id}', function (Request $request) {
-    return $request->id;
+Route::get('/perro', function (Request $request) {
+   return  Storage::move('hodor/public/files/1659110431.jpeg', 'hodor/public/filesnewfile-name.jpg'); 
 });
 
 Route::get('/gato', function (Request $request) {

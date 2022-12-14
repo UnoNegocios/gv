@@ -34,7 +34,8 @@ class UpdatePostRequest extends FormRequest
             'categories' => '',
             'tags' => '',
             'visibility' => '',
-            'short_description' => ''
+            'short_description' => '',
+            'slug' => ''
         ];
     }
 }

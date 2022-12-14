@@ -8,7 +8,7 @@ use App\Models\Post;
 use App\Http\Filters\post\PostFilter;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -41,8 +41,10 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         $validated = $request->validated();
+        $slug = ['slug' => Str::slug($request->title)];
         $post = Post::create(
-            $validated
+            $validated +
+            $slug
         );
         return response(null, 201);
     }
