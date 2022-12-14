@@ -29,8 +29,10 @@ class PostResource extends JsonResource
           'tags' => TagResource::collection($this->Tags),
           'author' => new UserResource($this->author),
           'visibility' => $this->visibility,
+          'date' => $this->getDate(),
           'created_at' => $this->created_at,
           'updated_at' => $this->updated_at
+          
         ];
     }
 }

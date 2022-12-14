@@ -9,6 +9,7 @@ use App\Http\Filters\post\PostFilter;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Http\Resources\post\PostResource;
 
 class PostController extends Controller
 {
@@ -57,7 +58,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return new PostResource($post);
     }
 
     /**
