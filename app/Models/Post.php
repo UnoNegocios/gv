@@ -65,7 +65,7 @@ class Post extends Model
             'contents' => ['en' => $this->short_description],
             'headings' => ['en' => $this->title],
             'included_segments' => ['Subscribed Users'],
-            'url' => 'https://gamavision.com/'. $this->slug,
+            'url' => 'https://gamavision.com/noticias/'. $this->slug,
         ]);
     }
 }
