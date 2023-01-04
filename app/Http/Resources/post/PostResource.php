@@ -30,6 +30,7 @@ class PostResource extends JsonResource
           'author' => new UserResource($this->author),
           'visibility' => $this->visibility,
           'date' => $this->getDate(),
+          'sent_push_notification' => $this->sent_push_notification,
           'created_at' => $this->created_at,
           'updated_at' => $this->updated_at
           

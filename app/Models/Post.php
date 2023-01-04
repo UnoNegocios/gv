@@ -25,7 +25,8 @@ class Post extends Model
         'author_id',
         'visibility',
         'short_description',
-        'slug'
+        'slug',
+        'sent_push_notification'
     ];
 
     protected $casts =[
@@ -67,6 +68,7 @@ class Post extends Model
             'included_segments' => ['Subscribed Users'],
             'url' => 'https://gamavision.com/noticias/'. $this->slug,
         ]);
+        $this->update(['sent_push_notification' => 1]);
     }
 }
 
