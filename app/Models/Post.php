@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Http;
 
 class Post extends Model
 {
@@ -52,6 +53,20 @@ class Post extends Model
         $fecha = Carbon::parse($this->created_at);
         $mes = $meses[($fecha->format('n')) - 1];
         return $inputs['Fecha'] = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
+    }
+
+    public function sendPush(){
+       return $response = Http::withHeaders([
+            'Content-Type' => 'application/json; charset=utf-8',
+            'Authorization' => 'Basic ZjQxZmY3ZmEtYTYxMC00YmQ1LTk3ZDctNGY3NWQ1OTVhMzM0'
+        ])
+        ->post('https://onesignal.com/api/v1/notifications', [
+            'app_id' => 'c33062e7-5ed4-4481-885d-05756086d45f',
+            'contents' => ['en' => $this->short_description],
+            'headings' => ['en' => $this->title],
+            'included_segments' => ['Subscribed Users'],
+            'url' => 'https://gamavision.com/'. $this->slug,
+        ]);
     }
 }
 

@@ -25,7 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/perro', function (Request $request) {
-   return  Storage::move('hodor/public/files/1659110431.jpeg', 'hodor/public/filesnewfile-name.jpg'); 
+   return Post::first();
 });
 
 Route::get('/gato', function (Request $request) {
@@ -130,6 +130,7 @@ Route::get('/news/categories', 'api\v1\category\CategoryController@index');
 Route::middleware('auth:api')->group(function() {
     Route::apiResource('/posts', 'api\v1\post\PostController');
     Route::post('post/image', 'api\v1\post\PostController@image');
+    Route::post('post/{post}/send_push', 'api\v1\post\PostController@sendPush');
 });
 
 //Categories

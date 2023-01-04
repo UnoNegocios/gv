@@ -47,7 +47,12 @@ class PostController extends Controller
             $validated +
             $slug
         );
-        return response(null, 201);
+        if($request->send_push == true){
+            return $post->sendPush();
+        }else{
+            return response(null, 201);
+        }
+        
     }
 
     /**
@@ -103,5 +108,9 @@ class PostController extends Controller
         $fileName = time() . '.' . $request->image->getClientOriginalExtension();
         $request->image->move(public_path('../public/files'), $fileName);
         return response()->json(['file' => $fileName]);
+    }  
+
+    public function sendPush(Post $post){
+       return $post->sendPush();
     }  
 }
